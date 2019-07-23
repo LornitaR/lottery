@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_014107) do
+ActiveRecord::Schema.define(version: 2019_07_23_004533) do
 
-  create_table "tickets", force: :cascade do |t|
+  create_table "ticket_lines", force: :cascade do |t|
     t.integer "num_one"
     t.integer "num_two"
     t.integer "num_three"
     t.integer "score"
+    t.integer "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_ticket_lines_on_ticket_id"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

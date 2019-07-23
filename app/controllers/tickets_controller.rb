@@ -46,6 +46,6 @@ class TicketsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ticket_params
-      params.permit(:num_one, :num_two, :num_three, :score)
+      params.require(:ticket).permit(:ticket_number)
     end
 end

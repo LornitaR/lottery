@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  num_one: 1
-  num_two: 1
-  num_three: 1
-  score: 1
+  ticket_number: 1
 
 two:
-  num_one: 1
-  num_two: 1
-  num_three: 1
-  score: 1
+  ticket_number: 1
