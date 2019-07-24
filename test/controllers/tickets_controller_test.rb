@@ -12,7 +12,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
-      post tickets_url, params: { ticket: { ticket_number: @ticket.ticket_number } }, as: :json
+      post tickets_url, params: { ticket: { ticket_id: @ticket.ticket_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ticket" do
-    patch ticket_url(@ticket), params: { ticket: { ticket_number: @ticket.ticket_number } }, as: :json
+    patch ticket_url(@ticket), params: { ticket: { ticket_id: @ticket.ticket_id } }, as: :json
     assert_response 200
   end
 
