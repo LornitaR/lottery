@@ -23,8 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_004533) do
     t.index ["ticket_id"], name: "index_ticket_lines_on_ticket_id"
   end
 
-  create_table "tickets", force: :cascade do |t|
-    t.integer "ticket_id"
+  create_table "tickets", primary_key: "ticket_id", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
