@@ -19,8 +19,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new()
     @ticket.save()
     
-    generate_ticket_lines @ticket
-    
+    generate_ticket_lines @ticket, ticket_params
 
     if @ticket.save
       render json: @ticket, status: :created, location: @ticket
@@ -33,7 +32,8 @@ class TicketsController < ApplicationController
   def update
     # assuming that ammending the ticket just means to add new lines
     # shouldn't be able to edit the numbers since it's a lottery
-    if @ticket.update(ticket_params)
+    generate_ticket_lines @ticket, ticket_params
+    if @ticket
       render json: @ticket
     else
       render json: @ticket.errors, status: :unprocessable_entity
@@ -56,7 +56,7 @@ class TicketsController < ApplicationController
       params.require(:number_of_lines)
     end
 
-    def generate_ticket_lines ticket
+    def generate_ticket_lines ticket, ticket_params
       # randomly generate numbers for the ticket lines
       ticket_params.to_i.times do |line|
         num_one = rand(3)
