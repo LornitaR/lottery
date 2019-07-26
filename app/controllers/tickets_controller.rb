@@ -3,9 +3,8 @@ class TicketsController < ApplicationController
 
   # GET /tickets
   def index
-    @ticket_lines = TicketLine.joins("full outer join tickets t on t.id = ticket_lines.ticket_id")
-    render json: @ticket_lines
-    
+    @tickets = Ticket.all()
+    render json: @tickets
   end
 
   # GET /tickets/1
