@@ -2,8 +2,8 @@ class StatusesController < ApplicationController
  # /status 
     # POSSIBLE MEANINGS FOR STATUS:
     # OPTION 1: just shows the score for each line, and sets the boolean `checked` to true
-    # OPTION 2: check to see if the ticket has ever been checked 
-    # OPTION 3: check to see if the ticket has been ammended, how many times it was ammended, etc 
+    # OPTION 2: check to see if the ticket has ever been checked
+    # OPTION 3: check to see if the ticket has been ammended, how many times it was ammended, etc
     # implementing option 1 since it makes the most sense
 
   # PATCH/PUT /tickets/1/status
