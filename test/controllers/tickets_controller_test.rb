@@ -24,7 +24,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ticket" do
-    patch ticket_url(@ticket), params: { ticket: { ticket_id: @ticket.ticket_id } }, as: :json
+    patch ticket_url(@ticket), params: { ticket: { id : @ticket.id } }, as: :json
     assert_response 200
   end
 

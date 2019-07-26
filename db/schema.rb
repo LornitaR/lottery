@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_004533) do
   create_table "tickets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status_checked", default: false
   end
 
 end
