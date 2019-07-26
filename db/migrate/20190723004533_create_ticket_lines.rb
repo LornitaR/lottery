@@ -5,8 +5,7 @@ class CreateTicketLines < ActiveRecord::Migration[5.2]
       t.integer :num_two
       t.integer :num_three
       t.integer :score
-      t.belongs_to :ticket, foreign_key: true
-
+      t.integer :ticket_id
       t.timestamps
     end
   end

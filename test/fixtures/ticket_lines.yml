@@ -5,11 +5,20 @@ one:
   num_two: 1
   num_three: 1
   score: 1
-  ticket: one
+  ticket_id: 123
 
 two:
   num_one: 1
   num_two: 1
   num_three: 1
   score: 1
-  ticket: two
+  ticket_id: 123
+
+
+three:
+  num_one: 1
+  num_two: 1
+  num_three: 1
+  score: 1
+  ticket_id: 234
+

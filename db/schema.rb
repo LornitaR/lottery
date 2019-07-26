@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_07_23_004533) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ticket_lines", force: :cascade do |t|
     t.integer "num_one"
     t.integer "num_two"
@@ -20,10 +23,9 @@ ActiveRecord::Schema.define(version: 2019_07_23_004533) do
     t.integer "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id"], name: "index_ticket_lines_on_ticket_id"
   end
 
-  create_table "tickets", primary_key: "ticket_id", force: :cascade do |t|
+  create_table "tickets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
