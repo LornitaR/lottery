@@ -84,5 +84,4 @@ class TicketsController < ApplicationController
         return 0
       end
     end
-
 end

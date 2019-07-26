@@ -35,4 +35,10 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 204
   end
+
+  test "score should be calculated correctly" do
+    @line = ticket_lines(:two)
+    patch ticket_line_url(@line), params: { ticket_line: { num_one: 1, num_three: 2, num_two: 0, ticket_id: 123 } }, as: :json
+    assert score = 5
+  end
 end
