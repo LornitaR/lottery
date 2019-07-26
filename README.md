@@ -14,11 +14,11 @@ Implement a REST interface to generate a ticket with n lines. Additionally we wi
 
 # My Solution
 
-/tickets               POST Creates a ticket with the number of lines requested
-/tickets               GET Gets a list of all tickets
-/tickets/{id}          GET Gets individual ticket, including the score for each line
-/tickets/{id}          POST Add lines to a ticket
-/tickets/{id}/status   PUT Sets a ticket status to checked so it can't be amended
+`/tickets               POST Creates a ticket with the number of lines requested`
+`/tickets               GET Gets a list of all tickets`
+`/tickets/{id}          GET Gets individual ticket, including the score for each line`
+`/tickets/{id}          POST Add lines to a ticket`
+`/tickets/{id}/status   PUT Sets a ticket status to checked so it can't be amended`
 
 ## Tests Included
 
