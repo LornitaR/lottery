@@ -1,24 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  num_one: 1
+  num_one: 0
   num_two: 1
   num_three: 1
-  score: 1
+  score: 10
   ticket_id: 123
 
 two:
   num_one: 1
-  num_two: 1
-  num_three: 1
-  score: 1
+  num_two: 2
+  num_three: 0
+  score: 5
   ticket_id: 123
 
 
 three:
   num_one: 1
   num_two: 1
-  num_three: 1
-  score: 1
+  num_three: 0
+  score: 0
   ticket_id: 234
 
