@@ -19,15 +19,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new()
     @ticket.save()
     
-    # randomly generate numbers for the ticket lines
-    ticket_params.to_i.times do |line|
-      num_one = rand(3)
-      num_two = rand(3)
-      num_three = rand(3)
-      score = get_score(num_one, num_two, num_three)
-      ticket_line = TicketLine.new(:num_one => num_one, :num_two => num_two, :num_three => num_three, :score => score, :ticket_id => @ticket.id)
-      ticket_line.save()
-    end
+    generate_ticket_lines @ticket
+    
 
     if @ticket.save
       render json: @ticket, status: :created, location: @ticket
@@ -61,6 +54,18 @@ class TicketsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def ticket_params
       params.require(:number_of_lines)
+    end
+
+    def generate_ticket_lines ticket
+      # randomly generate numbers for the ticket lines
+      ticket_params.to_i.times do |line|
+        num_one = rand(3)
+        num_two = rand(3)
+        num_three = rand(3)
+        score = get_score(num_one, num_two, num_three)
+        ticket_line = TicketLine.new(:num_one => num_one, :num_two => num_two, :num_three => num_three, :score => score, :ticket_id => ticket.id)
+        ticket_line.save()
+      end
     end
 
     def get_score num_one, num_two, num_three
