@@ -4,7 +4,7 @@ class StatusesController < ApplicationController
     # OPTION 1: just shows the score for each line, and sets the boolean `checked` to true
     # OPTION 2: check to see if the ticket has ever been checked
     # OPTION 3: check to see if the ticket has been ammended, how many times it was ammended, etc
-    # implementing option 1 since it makes the most sense
+    # implementing option 2, since the score for each line is already shown in other get calls
 
   # PATCH/PUT /tickets/1/status
   def update
