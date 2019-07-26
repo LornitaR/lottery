@@ -32,8 +32,6 @@ class TicketsController < ApplicationController
   def update
     # assuming that ammending the ticket just means to add new lines
     # shouldn't be able to edit the numbers since it's a lottery
-    # check the status_checked bool. If true, give error message to say it can't be modified
-    # if false, generate ticket as normal 
     if @ticket.status_checked == false
       generate_ticket_lines @ticket, ticket_params
       if @ticket
@@ -87,10 +85,4 @@ class TicketsController < ApplicationController
       end
     end
 
-    # /status 
-    # POSSIBLE MEANINGS FOR STATUS:
-    # OPTION 1: just shows the score for each line, and sets the boolean `checked` to true
-    # OPTION 2: check to see if the ticket has ever been checked 
-    # OPTION 3: check to see if the ticket has been ammended, how many times it was ammended, etc 
-    # implementing option 1 since it makes the most sense
 end
